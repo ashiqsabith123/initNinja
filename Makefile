@@ -1,2 +1,3 @@
+
 run:
-	./bin/initninja init
+	go build -o bin/initninja && ./bin/initninja init

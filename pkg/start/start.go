@@ -1,12 +1,14 @@
 package start
 
-type Starter struct {
-}
+import "fmt"
 
-func NewStarter() Starter {
-	return Starter{}
-}
+// type Starter struct {
+// }
 
-func (s *Starter) Start() {
+// func NewStarter() Starter {
+// 	return Starter{}
+// }
 
+func Start() {
+	fmt.Println("Hola... Welcome to initNinja")
 }
