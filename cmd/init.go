@@ -4,6 +4,7 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	arch "github.com/ashiqsabith123/initNinja/pkg/architecture"
 	start "github.com/ashiqsabith123/initNinja/pkg/start"
 	"github.com/spf13/cobra"
 )
@@ -16,6 +17,7 @@ var initCmd = &cobra.Command{
 and usage of u`,
 	Run: func(cmd *cobra.Command, args []string) {
 		start.Start()
+		arch.CleanCode()
 	},
 }
 

@@ -1,6 +1,10 @@
 package start
 
-import "fmt"
+import (
+	"fmt"
+
+	ui "github.com/ashiqsabith123/initNinja/pkg/ui"
+)
 
 // type Starter struct {
 // }
@@ -10,5 +14,6 @@ import "fmt"
 // }
 
 func Start() {
-	fmt.Println("Hola... Welcome to initNinja")
+
+	fmt.Println(ui.Banner)
 }
