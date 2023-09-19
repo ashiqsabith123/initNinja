@@ -1,0 +1,54 @@
+SOA Architecture --------------------------
+
+SOA_Project/
+│
+├── Service1/
+│   ├── src/
+│   │   ├── main.go       # Service 1 source code
+│   │   ├── ...
+│   │
+│   ├── config/           # Configuration files for Service 1
+│   │   ├── service1.yml
+│   │   ├── ...
+│   │
+│   ├── Dockerfile        # Dockerfile for Service 1
+│   ├── ...
+│
+├── Service2/
+│   ├── src/
+│   │   ├── main.go       # Service 2 source code
+│   │   ├── ...
+│   │
+│   ├── config/           # Configuration files for Service 2
+│   │   ├── service2.yml
+│   │   ├── ...
+│   │
+│   ├── Dockerfile        # Dockerfile for Service 2
+│   ├── ...
+│
+├── Common/                # Shared code and libraries (if applicable)
+│   ├── utils/
+│   ├── models/
+│   ├── ...
+│
+├── API_Gateway/
+│   ├── src/
+│   │   ├── main.go       # API Gateway source code
+│   │   ├── ...
+│   │
+│   ├── config/           # Configuration files for the API Gateway
+│   │   ├── api_gateway.yml
+│   │   ├── ...
+│   │
+│   ├── Dockerfile        # Dockerfile for the API Gateway
+│   ├── ...
+│
+├── Shared_Database/
+│   ├── migrations/       # Database schema migrations
+│   ├── ...
+│
+├── docker-compose.yml    # Docker Compose file for local development
+├── README.md             # Project documentation
+├── LICENSE               # License file (if applicable)
+├── ...
+

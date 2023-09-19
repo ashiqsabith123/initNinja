@@ -5,6 +5,8 @@ import (
 	"log"
 
 	"github.com/AlecAivazis/survey/v2"
+	"github.com/acarl005/stripansi"
+	"github.com/ashiqsabith123/initNinja/pkg/architecture"
 	"github.com/ashiqsabith123/initNinja/pkg/frameworks"
 	"github.com/ashiqsabith123/initNinja/pkg/languages"
 	ui "github.com/ashiqsabith123/initNinja/pkg/ui"
@@ -14,6 +16,7 @@ type Details struct {
 	Project_name string
 	Language     string
 	Framework    string
+	Architecture string
 }
 
 func DisplayAndSelectInputs() {
@@ -22,10 +25,13 @@ func DisplayAndSelectInputs() {
 
 	language := []string{}
 	for i := 0; i < len(languages.Languages); i++ {
-		language = append(language, ui.Bold(ui.ColorArray[i](languages.Languages[i])))
+		language = append(language, (ui.ColorArray[i](languages.Languages[i])))
 	}
 
-	qs := []*survey.Question{
+	architectures := []string{}
+	architectures = append(architectures, architecture.Architectures...)
+
+	qs1 := []*survey.Question{
 
 		{
 			Name:      "project_name",
@@ -43,32 +49,44 @@ func DisplayAndSelectInputs() {
 		},
 	}
 
-	err := survey.Ask(qs, &details)
+	err := survey.Ask(qs1, &details)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	var framewrk []string
+	var framework []string
 
-	fmt.Println(details)
-	details.Language += "\033[0m"
-	fmt.Println(details)
+	details.Language = stripansi.Strip(details.Language)
 
 	for i, v := range frameworks.Frameworks {
 		if i == details.Language {
-			fmt.Println("hh")
-			fmt.Println(v)
+			framework = append(framework, v...)
+			break
 		}
 	}
 
-	prompt := &survey.Select{
-		Message: "Select an option:",
-		Options: framewrk,
+	qs2 := []*survey.Question{
+		{
+			Name: "framework",
+			Prompt: &survey.Select{
+				Message: "Select your framework",
+				Options: framework,
+			},
+		},
+		{
+			Name: "architecture",
+			Prompt: &survey.Select{
+				Message: "Select your architeture",
+				Options: architectures,
+			},
+		},
 	}
 
 	// Ask the user to select an option
-	if err := survey.AskOne(prompt, &details.Framework); err != nil {
+	if err := survey.Ask(qs2, &details); err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println(details)
 
 }

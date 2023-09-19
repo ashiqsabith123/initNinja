@@ -6,6 +6,7 @@ require github.com/google/wire v0.5.0
 
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.7 // indirect
+	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d // indirect
 	github.com/fatih/color v1.15.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect

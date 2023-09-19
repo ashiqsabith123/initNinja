@@ -1,3 +1,3 @@
 package languages
 
-var Languages = []string{"GO", "Python", "Dart", "Ruby", "Java", "JavaScript"}
+var Languages = []string{"GO", "Python", "Dart", "Java", "Ruby", "JavaScript"}
