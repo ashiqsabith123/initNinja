@@ -1,6 +1,7 @@
 package core
 
 import (
+	"errors"
 	"fmt"
 	"log"
 
@@ -34,9 +35,14 @@ func DisplayAndSelectInputs() {
 	qs1 := []*survey.Question{
 
 		{
-			Name:      "project_name",
-			Prompt:    &survey.Input{Message: "Enter your project name: "},
-			Validate:  survey.Required,
+			Name:   "project_name",
+			Prompt: &survey.Input{Message: "Enter your project name: "},
+			Validate: func(ans interface{}) error {
+				if ans == "shift" {
+					return errors.New("folder exist")
+				}
+				return nil
+			},
 			Transform: survey.Title,
 		},
 
@@ -88,5 +94,9 @@ func DisplayAndSelectInputs() {
 	}
 
 	fmt.Println(details)
+
+}
+
+func CreateFolder(folder_name string, directories []string) {
 
 }
