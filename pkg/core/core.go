@@ -2,8 +2,8 @@ package core
 
 import (
 	"errors"
-	"fmt"
 	"log"
+	"os"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/acarl005/stripansi"
@@ -20,7 +20,7 @@ type Details struct {
 	Architecture string
 }
 
-func DisplayAndSelectInputs() {
+func DisplayAndSelectInputs() Details {
 
 	details := Details{}
 
@@ -38,10 +38,10 @@ func DisplayAndSelectInputs() {
 			Name:   "project_name",
 			Prompt: &survey.Input{Message: "Enter your project name: "},
 			Validate: func(ans interface{}) error {
-				if ans == "shift" {
-					return errors.New("folder exist")
+				if _, err := os.Stat(ans.(string)); os.IsNotExist(err) {
+					return nil
 				}
-				return nil
+				return errors.New("folder already exist")
 			},
 			Transform: survey.Title,
 		},
@@ -93,10 +93,6 @@ func DisplayAndSelectInputs() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(details)
-
-}
-
-func CreateFolder(folder_name string, directories []string) {
+	return details
 
 }

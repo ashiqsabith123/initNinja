@@ -3,6 +3,7 @@ package start
 import (
 	"fmt"
 
+	"github.com/ashiqsabith123/initNinja/pkg/architecture"
 	core "github.com/ashiqsabith123/initNinja/pkg/core"
 	ui "github.com/ashiqsabith123/initNinja/pkg/ui"
 )
@@ -17,9 +18,13 @@ import (
 func Start() {
 
 	fmt.Println(ui.Magenta(ui.Banner))
-
 	fmt.Println(ui.Bold("Hola... Welcome to initNinja \n"))
 
-	core.DisplayAndSelectInputs()
+	output := core.DisplayAndSelectInputs()
+
+	switch output.Architecture {
+	case "Clean Code Architecture":
+		architecture.CleanCode(output.Project_name)
+	}
 
 }
