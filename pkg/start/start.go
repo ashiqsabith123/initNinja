@@ -5,6 +5,8 @@ import (
 
 	"github.com/ashiqsabith123/initNinja/pkg/architecture"
 	core "github.com/ashiqsabith123/initNinja/pkg/core"
+	"github.com/ashiqsabith123/initNinja/pkg/frameworks"
+	"github.com/ashiqsabith123/initNinja/pkg/languages"
 	ui "github.com/ashiqsabith123/initNinja/pkg/ui"
 )
 
@@ -24,7 +26,17 @@ func Start() {
 
 	switch output.Architecture {
 	case "Clean Code Architecture":
-		architecture.CleanCode(output.Project_name)
+		architecture.CleanCode(output.Project_name, output.Language)
+	}
+
+	switch output.Language {
+	case "GO":
+		languages.Golang(output.Project_name)
+	}
+
+	switch output.Framework {
+	case "Gin":
+		frameworks.Gin(output.Project_name)
 	}
 
 }

@@ -1,6 +1,6 @@
 
 run:
-	go build -o bin/initninja && ./bin/initninja init
+	go run main.go init
 
 build:
 	go build -o bin/initninja

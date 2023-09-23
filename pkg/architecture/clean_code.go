@@ -1,10 +1,12 @@
 package architecture
 
-import "github.com/ashiqsabith123/initNinja/pkg/helper"
+import (
+	"github.com/ashiqsabith123/initNinja/pkg/helper"
+)
 
-func CleanCode(project_name string) {
+func CleanCode(project_name, language string) {
 
-	cleanCode := []string{
+	folderStructure := []string{
 		"cmd/api",
 		"pkg/api/handler",
 		"pkg/api/middleware",
@@ -16,6 +18,18 @@ func CleanCode(project_name string) {
 		"pkg/usecases/interfaces",
 	}
 
-	helper.CreateFolder(project_name, cleanCode)
+	go_files := []string{
+		"cmd/api/main.go",
+		"pkg/api/server.go",
+		"pkg/config/config.go",
+		"pkg/di/wire.go",
+	}
+
+	helper.CreateFolder(project_name, folderStructure)
+
+	switch language {
+	case "GO":
+		helper.CreateFiles(project_name, go_files)
+	}
 
 }

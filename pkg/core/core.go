@@ -41,7 +41,7 @@ func DisplayAndSelectInputs() Details {
 				if _, err := os.Stat(ans.(string)); os.IsNotExist(err) {
 					return nil
 				}
-				return errors.New("folder already exist")
+				return errors.New(ui.Bold(ui.Yellow(ans.(string)) + ui.Red(" -named folder already exist in this directory")))
 			},
 			Transform: survey.Title,
 		},
