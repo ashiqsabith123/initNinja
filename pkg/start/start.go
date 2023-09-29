@@ -27,6 +27,8 @@ func Start() {
 	switch output.Architecture {
 	case "Clean Code Architecture":
 		architecture.CleanCode(output.Project_name, output.Language)
+	case "MVC":
+		architecture.Mvc(output.Project_name, output.Language)
 	}
 
 	switch output.Language {
@@ -36,7 +38,7 @@ func Start() {
 
 	switch output.Framework {
 	case "Gin":
-		frameworks.Gin(output.Project_name)
+		frameworks.Gin(output.Project_name, output.Architecture)
 	}
 
 }

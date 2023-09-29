@@ -7,7 +7,16 @@ import (
 	"os/exec"
 )
 
-func Gin(project_name string) {
+func Gin(project_name, architecture string) {
+
+	var filename string
+
+	switch architecture {
+	case "Clean Code Architecture":
+		filename = "/cmd/api/main.go"
+	case "MVC":
+		filename = "/main.go"
+	}
 	cmd := exec.Command("go", "get", "-u", "github.com/gin-gonic/gin")
 	cmd.Dir = project_name + "/"
 
@@ -18,7 +27,7 @@ func Gin(project_name string) {
 		return
 	}
 
-	file, err := os.OpenFile(project_name+"/cmd/api/main.go", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	file, err := os.OpenFile(project_name+filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 
 	if err != nil {
 		log.Println(err)
@@ -40,5 +49,9 @@ func main() {
 }`
 
 	file.WriteString(code)
+
+}
+
+func Gorilla(project_name string) {
 
 }

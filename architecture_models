@@ -52,3 +52,43 @@ SOA_Project/
 ├── LICENSE               # License file (if applicable)
 ├── ...
 
+MVC Architecture....
+
+
+myapp/
+├── app/
+│   ├── controllers/
+│   │   ├── user_controller.go
+│   │   ├── post_controller.go
+│   │   └── ...
+│   ├── models/
+│   │   ├── user_model.go
+│   │   ├── post_model.go
+│   │   └── ...
+│   └── views/
+│       ├── user_view.go
+│       ├── post_view.go
+│       └── ...
+├── config/
+│   ├── config.go
+│   ├── database.go
+│   └── ...
+├── routes/
+│   ├── routes.go
+│   └── ...
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── ...
+├── templates/
+│   ├── user/
+│   │   ├── index.html
+│   │   ├── show.html
+│   │   └── ...
+│   ├── post/
+│   │   ├── index.html
+│   │   ├── show.html
+│   │   └── ...
+│   └── ...
+├── main.go
+└── README.md
