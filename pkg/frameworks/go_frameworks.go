@@ -12,10 +12,12 @@ func Gin(project_name, architecture string) {
 	var filename string
 
 	switch architecture {
+
 	case "Clean Code Architecture":
 		filename = "/cmd/api/main.go"
 	case "MVC":
 		filename = "/main.go"
+
 	}
 	cmd := exec.Command("go", "get", "-u", "github.com/gin-gonic/gin")
 	cmd.Dir = project_name + "/"
