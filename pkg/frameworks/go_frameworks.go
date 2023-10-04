@@ -17,6 +17,8 @@ func Gin(project_name, architecture string) {
 		filename = "/cmd/api/main.go"
 	case "MVC":
 		filename = "/main.go"
+	case "DDD":
+		filename = "/cmd/main.go"
 
 	}
 	cmd := exec.Command("go", "get", "-u", "github.com/gin-gonic/gin")

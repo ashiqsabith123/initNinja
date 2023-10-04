@@ -29,6 +29,8 @@ func Start() {
 		architecture.CleanCode(output.Project_name, output.Language)
 	case "MVC":
 		architecture.Mvc(output.Project_name, output.Language)
+	case "DDD":
+		architecture.DDD(output.Project_name, output.Language)
 	}
 
 	switch output.Language {

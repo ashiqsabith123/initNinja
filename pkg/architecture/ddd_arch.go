@@ -1,5 +1,7 @@
 package architecture
 
+import "github.com/ashiqsabith123/initNinja/pkg/helper"
+
 func DDD(project_name, language string) {
 	folderStructure := []string{
 		"cmd/",
@@ -24,9 +26,18 @@ func DDD(project_name, language string) {
 		"tests/integration",
 		"tests/e2e",
 
-		"scripts"
-
-
-
+		"scripts",
 	}
+
+	go_files := []string{
+		"cmd/main.go",
+	}
+
+	helper.CreateFolder(project_name, folderStructure)
+
+	switch language {
+	case "GO":
+		helper.CreateFiles(project_name, go_files)
+	}
+
 }
