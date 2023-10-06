@@ -1,0 +1,20 @@
+{
+    "clean_code":[
+        "cmd/api",
+		"pkg/api/handler",
+		"pkg/api/middleware",
+		"pkg/api/routes",
+		"pkg/config",
+		"pkg/db",
+		"pkg/di",
+		"pkg/repository/interfaces",
+		"pkg/usecases/interfaces"
+    ],
+
+    "go_clean_files":[
+        "cmd/api/main.go",
+		"pkg/api/server.go",
+		"pkg/config/config.go",
+		"pkg/di/wire.go"
+    ]
+}

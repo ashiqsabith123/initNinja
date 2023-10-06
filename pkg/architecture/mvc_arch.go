@@ -1,6 +1,8 @@
 package architecture
 
-import "github.com/ashiqsabith123/initNinja/pkg/helper"
+import (
+	"github.com/ashiqsabith123/initNinja/pkg/helper"
+)
 
 func Mvc(project_name, language string) {
 
@@ -29,4 +31,5 @@ func Mvc(project_name, language string) {
 	case "GO":
 		helper.CreateFiles(project_name, go_files)
 	}
+
 }
