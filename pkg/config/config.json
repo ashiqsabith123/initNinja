@@ -1,5 +1,5 @@
 {
-    "clean_code":[
+    "clean_code_arch":[
         "cmd/api",
 		"pkg/api/handler",
 		"pkg/api/middleware",
@@ -15,6 +15,85 @@
         "cmd/api/main.go",
 		"pkg/api/server.go",
 		"pkg/config/config.go",
-		"pkg/di/wire.go"
-    ]
+		"pkg/di/wire.go",
+		"Readme.md"
+    ],
+
+	
+	"ddd_arch":[
+		"cmd/",
+		"internal/app/domain/entity",
+		"internal/app/domain/valueobject",
+		"internal/app/domain/repository",
+		"internal/app/domain/service",
+		"internal/app/domain/factory",
+		"internal/app/domain/aggregate",
+		"internal/app/domain/event",
+
+		"internal/app/application/usecase",
+		"internal/app/application/service",
+
+		"internal/app/infrastructure/persistence/repository_impl",
+		"internal/app/messaging",
+
+		"internal/interfaces/http",
+		"internal/interfaces/grpc",
+
+		"tests/unit",
+		"tests/integration",
+		"tests/e2e",
+
+		"scripts"
+	],
+
+	"go_ddd_files":[
+		"cmd/main.go",
+		"Readme.md"
+	],
+
+
+	"mvc_arch":[
+		"app/controllers/models",
+		"app/controllers/views",
+		"app/config",
+		"app/routes",
+		"app/static/css",
+		"app/static/js",
+		"app/templates/user",
+		"app/templates/post"
+	],
+
+	"go_mvc_files":[
+		"app/config/config.go",
+		"app/config/database.go",
+		"app/routes/routes.go",
+		"main.go",
+		"Readme.md"
+	],
+
+	"three_tier_arch":[
+		"cmd/app",
+		"pkg/presentation/handlers",
+		"pkg/application/services",
+		"pkg/application/controllers",
+		"pkg/dataaccess/repositories",
+		"pkg/dataaccess/database/migrations",
+		"cofigs",
+		"static",
+		"templates",
+		"tests"
+	],
+
+	"go_three_tier_files":[
+		"pkg/presentation/routes.go",
+		"pkg/presentation/middleware.go",
+		"pkg/dataaccess/database/database.go"
+	]
+
+
+
+
+
+
+	
 }

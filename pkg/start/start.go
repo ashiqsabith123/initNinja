@@ -31,6 +31,8 @@ func Start() {
 		architecture.Mvc(output.Project_name, output.Language)
 	case "DDD":
 		architecture.DDD(output.Project_name, output.Language)
+	case "three-tier":
+		architecture.ThreeTier(output.Project_name, output.Language)
 	}
 
 	switch output.Language {

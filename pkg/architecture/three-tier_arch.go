@@ -5,15 +5,13 @@ import (
 	"github.com/ashiqsabith123/initNinja/pkg/helper"
 )
 
-func CleanCode(project_name, language string) {
-
-	folderStructure := config.GetFolderStructure("clean_code_arch")
+func ThreeTier(project_name, language string) {
+	folderStructure := config.GetFolderStructure("three_tier_arch")
 
 	helper.CreateFolder(project_name, folderStructure)
 
 	switch language {
 	case "GO":
-		helper.CreateFiles(project_name, config.GetFolderStructure("go_clean_files"))
+		helper.CreateFiles(project_name, config.GetFolderStructure("go_three_tier_files"))
 	}
-
 }
